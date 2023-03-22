@@ -1,5 +1,5 @@
 
-#issues:
+#issues#:
 **Dearpygui**
 		Dearpygui can't render unicode texts
 		Can't change fonts/ font size

@@ -24,43 +24,9 @@ How to use
 change the file path, folder path and template directory to respective values in the script.
 (will make that as a pre-loaded config later)
 Run the script
-copy result.py to any folder and enjoy the time you saved by not manually writing a tk GUI.
+copy result.py to any folder and enjoy the time you saved- by not manually writing a tk GUI.
 
 
 Any collaboration is more than welcome.
 
-
-======================================
-target library example- derpygui, tkinter, fltk  etc
-======================================
-dearpygui:
-    Stats:
-        library dir size: 3MB 
-        RAM : 52MB
-        ROM: 19MB -- no change after using complex GUI
-    Pros:
-        It starts up fast, so no issues i suppose
-    Cons:
-        Can't Change font or it' size
-tkinter 
-    Stats:
-        library dir size: 4MB 
-        RAM : 19MB
-        ROM: 22.3 MB -- no change after using complex GUI  
-    Pros:
-        no install requirement !
-        at this point, it has the advantage that it can change fonts ,( w.r.t dpg)
-    Cons:
-        Can't change the size of Check box.
-ptfltk
-    Stats:
-        library dir size: 4MB 
-        RAM : 20MB for exe, 136Mb for IDE
-        ROM: 19MB 
-    Pros:
-        Offers more versatility, more stable, fast startup
-    Cons:
-        Limited documentation for python and limited active support        
-    
-
-
+for library specific development status, see TODO.md

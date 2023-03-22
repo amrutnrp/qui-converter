@@ -4,7 +4,7 @@
   * Dearpygui can't render unicode texts
   * Can't change fonts/ font size
 <br /> **TK** <br />
-  * Object overlap and transparency
+  * Object overlap and transparency issues
   * Checkbutton alignment problem
 <br />**PyFLTK**
   * can't change font/ font size
@@ -23,6 +23,7 @@
         It starts up fast, so no issues i suppose
     Cons:
         Can't Change font or it' size
+        
 <br /> **tkinter** <br />
     
     Stats:

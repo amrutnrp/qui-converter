@@ -1,0 +1,26 @@
+import fltk as fL
+import sys
+
+class MainApplication():
+    def __init__(self):
+        self.Main_window = fL.Fl_Window(100,  # x of window origin
+                                100,  # y of x of window origin
+                                {width},
+                                {height},
+                                )
+        self.Main_window.label("{name}")
+{middle}
+        self.Main_window.end()
+
+    def show(self):
+        self.Main_window.show()
+        fL.Fl.run() 
+
+if __name__ == "__main__":
+    app = MainApplication()
+    app.show()
+
+
+
+    
+

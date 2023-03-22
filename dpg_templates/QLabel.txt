@@ -1,0 +1,4 @@
+{name} = dpg.add_text(tag='{name}',
+                                    default_value = "{text}",
+                                    pos=({x}, {y}),
+                                    )

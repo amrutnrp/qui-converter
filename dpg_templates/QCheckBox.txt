@@ -1,0 +1,4 @@
+{name} = dpg.add_checkbox(tag= '{name}',
+                                label="{text}",
+                                pos=({x}, {y}), 
+                                )

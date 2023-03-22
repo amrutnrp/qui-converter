@@ -1,0 +1,7 @@
+self.{name} = fL.Fl_Input(
+                        {x},
+                        {y},
+                        {width}, 
+                        {height},
+                        "{text}",
+                        )

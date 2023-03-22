@@ -1,0 +1,6 @@
+{name} = dpg.add_input_text(tag= '{name}',
+                                    multiline= True,
+                                    pos=({x}, {y}),
+                                    width={width}, 
+                                    height={height},
+                                    )

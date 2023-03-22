@@ -1,0 +1,9 @@
+self.{name} = fL.Fl_Multiline_Input(
+                        {x},
+                        {y},
+                        {width},
+                        {height},
+                        "{text}",
+                        )
+
+

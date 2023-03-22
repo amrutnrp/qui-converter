@@ -1,0 +1,56 @@
+import dearpygui.dearpygui as dpg
+import sys
+dpg.create_context()
+with dpg.window(tag="mainWindow", pos=(0, 0), no_resize = False) as win1:
+
+
+
+{middle}
+dpg.create_viewport(title='MainWindow', width={width}, height={height})
+
+with dpg.theme() as global_theme:
+    with dpg.theme_component(dpg.mvAll):
+        dpg.add_theme_color(dpg.mvThemeCol_WindowBg, (255, 230, 196), category=dpg.mvThemeCat_Core)
+        dpg.add_theme_color(dpg.mvThemeCol_ChildBg, (255, 255, 255), category=dpg.mvThemeCat_Core)
+        dpg.add_theme_color(dpg.mvThemeCol_Text, (0, 0, 0), category=dpg.mvThemeCat_Core)
+        dpg.add_theme_color(dpg.mvThemeCol_PopupBg, (255, 255, 255), category=dpg.mvThemeCat_Core)
+        dpg.add_theme_color(dpg.mvThemeCol_Border, (141,139,139), category=dpg.mvThemeCat_Core)
+        dpg.add_theme_color(dpg.mvThemeCol_FrameBg, (255, 255, 255), category=dpg.mvThemeCat_Core)
+        dpg.add_theme_color(dpg.mvThemeCol_ScrollbarBg, (192, 179, 197), category=dpg.mvThemeCat_Core)
+        dpg.add_theme_color(dpg.mvThemeCol_ScrollbarGrab, (137, 129, 129), category=dpg.mvThemeCat_Core)
+        dpg.add_theme_color(dpg.mvThemeCol_Button, (208, 208, 220), category=dpg.mvThemeCat_Core)
+        dpg.add_theme_color(dpg.mvThemeCol_ButtonHovered, (179, 208, 138), category=dpg.mvThemeCat_Core)
+        dpg.add_theme_color(dpg.mvThemeCol_Tab, (196, 196, 196), category=dpg.mvThemeCat_Core)
+        dpg.add_theme_color(dpg.mvThemeCol_BorderShadow, (168, 161, 161), category=dpg.mvThemeCat_Core)
+        dpg.add_theme_color(dpg.mvThemeCol_TitleBg, (0,0,0), category=dpg.mvThemeCat_Core)
+        
+        dpg.add_theme_style(dpg.mvStyleVar_FrameRounding, 7, category=dpg.mvThemeCat_Core)
+        dpg.add_theme_style(dpg.mvStyleVar_FrameBorderSize, 1, category=dpg.mvThemeCat_Core)
+dpg.bind_item_theme(win1, global_theme)
+
+def clean_up():
+    retention_list = ['retention_list', 'this', 'obj_dict','layout','','']
+    this = sys.modules[__name__]
+    for n in dir():
+        if n not in retention_list:  delattr(this, n)
+    del this, retention_list, n
+def gui_kick_off():
+    dpg.setup_dearpygui()
+    dpg.show_viewport()
+    dpg.set_primary_window("mainWindow", True)
+    dpg.start_dearpygui()
+    dpg.stop_dearpygui()
+    dpg.destroy_context()
+
+if __name__ == '__main__':
+    gui_kick_off()
+    # clean_up(),
+'''
+
+cleanup_dearpygui() -- old deprecated function that just works
+instead of dpg.destroy_context()
+
+
+or do dpg.remove_alias("pushButton_7") for every widget there is
+
+'''

@@ -1,0 +1,8 @@
+self.{name} = fL.Fl_Button(
+                        {x},
+                        {y},
+                        {width},
+                        {height},
+                        
+                        )
+;self.{name}.label("{text}")

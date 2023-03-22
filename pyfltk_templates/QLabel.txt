@@ -1,0 +1,8 @@
+self.{name} = fL.Fl_Box(
+                        {x},
+                        {y},
+                        {width}, 
+                        {height},
+                        "{text}",
+                        )
+;self.{name}.labelsize({pointsize});

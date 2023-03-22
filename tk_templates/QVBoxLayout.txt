@@ -1,0 +1,8 @@
+self.{name} = ttk.Frame (self.{parent} );
+self.{name}.place(x = {x},
+                                y = {y},
+                                height={height}, 
+                                width={width}, );
+                              
+
+self.{name}.{extras}

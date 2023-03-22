@@ -1,0 +1,11 @@
+self.widget_items ["{name}"] = ttk.Entry ( master = self.{parent},
+                                            font=('MS Shell DLG', {pointsize}, ) , 
+                                            )
+;self.widget_items ["{name}"] .place(
+                                x = {x},
+                                y = {y},
+                                height={height}, 
+                                width={width},
+                                )                                          
+
+;self.widget_items ["{name}"].{extras};  

@@ -1,0 +1,6 @@
+{name} = dpg.add_button(tag= '{name}',
+                                label="{text}",
+                                pos=({x}, {y}), 
+                                width={width}, 
+                                height={height},
+                                )

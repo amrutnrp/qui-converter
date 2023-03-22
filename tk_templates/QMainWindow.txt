@@ -1,0 +1,28 @@
+import tkinter as tk
+from tkinter import ttk
+from tkinter import scrolledtext
+
+class MainApplication():
+    def __init__(self):
+        self.{name} = tk.Tk()
+        self.frame = ttk.Frame(self.{name}, padding=10)
+
+        #=========congigure_gui ======================
+        self.{name}.title("{name}")
+        self.{name}.geometry("{width}x{height}")
+        self.{name}.resizable(True, True)
+        ##=========create_widgets ======================
+        self.widget_items = {}
+        style_obj = ttk.Style()
+
+{middle}
+    def show(self):
+        self.{name}.mainloop()
+
+if __name__ == "__main__":
+    app = MainApplication()
+    app.show()
+
+    
+    
+

@@ -40,9 +40,9 @@
 <br />**ptfltk** <br />
 
     Stats:
-        `library dir size: 4MB 
+        library dir size: 4MB 
         RAM : 20MB for exe, 136Mb for IDE
-        ROM : 19MB `
+        ROM : 19MB 
     Pros:
         Offers more versatility, more stable, fast startup
     Cons:

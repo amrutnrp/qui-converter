@@ -2,10 +2,10 @@ self.widget_items ["{name}"] = ttk.Radiobutton(master = self.{parent},
                                                     text='{text}',
                                                     style='{name}.T{eq_name}',
                                                     );
-self.{name}.place(              x = {x},
+self.widget_items ["{name}"].place(x = {x},
                                 y = {y},
                                 height={height}, 
                                 width={width}, );
-;style_obj.configure('{name}.T{eq_name}', font=('{family}', {pointsize}) , )
+style_obj.configure('{name}.T{eq_name}', font=('{family}', {pointsize}) , );
 
-;self.widget_items ["{name}"].{extras};                                                      
+self.widget_items["{name}"].{extras};                                                      

@@ -4,20 +4,19 @@ from tkinter import scrolledtext
 
 class MainApplication():
     def __init__(self):
-        self.{name} = tk.Tk()
-        self.frame = ttk.Frame(self.{name}, padding=10)
+        self.{class}1 = tk.Tk()
 
         #=========congigure_gui ======================
-        self.{name}.title("{name}")
-        self.{name}.geometry("{width}x{height}")
-        self.{name}.resizable(True, True)
+        self.{class}1.title("{name}")
+        self.{class}1.geometry("{width}x{height}")
+        self.{class}1.resizable(True, True)
         ##=========create_widgets ======================
         self.widget_items = {}
         style_obj = ttk.Style()
 
 {middle}
     def show(self):
-        self.{name}.mainloop()
+        self.{class}1.mainloop()
 
 if __name__ == "__main__":
     app = MainApplication()

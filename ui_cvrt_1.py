@@ -44,7 +44,8 @@ widget_translation  = {
                 'QRadioButton' :  'Radiobutton',
                 'QTextEdit'    :  '',
                 'QVBoxLayout'  :  '',
-                'QWidget'      :  ''
+                'QWidget'      :  '',
+                'QTextBrowser' :  '',
 
             }
 
@@ -268,7 +269,7 @@ dismiss_classes = ['QMenuBar', 'QStatusBar']
 parent_1 = ''
 
 def write_gui_template (list_item, parent = '', extras= ''):
-    global no_of_indents
+    global no_of_indents, counter
     slate = ''
     add_later = ''
     parent_1 = parent
@@ -291,7 +292,8 @@ def write_gui_template (list_item, parent = '', extras= ''):
 
                 if is_tk: item.update ( { 'eq_name': widget_translation [cvt_lib][item ['class']] } )
                 template_file= template_path + item['class'] +'.txt'
-                parent_1 = item['name']
+                parent_1 = item['class'] + str(counter) 
+                counter += 1
                 if is_tk:
                     if item['class'] == 'QHBoxLayout':
                         extras_1 = 'pack(side = \'left\', expand=True, fill=\'x\')'
@@ -333,6 +335,7 @@ leading and trailing spaces in each line will be removed
 
 '''
 
+counter = 1
 
 file_string = write_gui_template ( all_val_2)
 

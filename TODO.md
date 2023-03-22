@@ -15,7 +15,7 @@
 ======================================
 #target library example- derpygui, tkinter, fltk  etc
 ======================================
-**dearpygui**
+**dearpygui**  
     Stats:
         library folder size(in pyinstaller exe) : 3MB 
         RAM : 52MB

@@ -1,9 +1,9 @@
 
-# issues  
-**Dearpygui**
+# Issues  
+**Dearpygui** <br />
 		Dearpygui can't render unicode texts
 		Can't change fonts/ font size
-**TK**
+**TK** <br />
 		Object overlap and transparency 
 		Checkbutton alignment problem
 **PyFLTK**

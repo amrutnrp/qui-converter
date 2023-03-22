@@ -11,32 +11,35 @@
   * pyFLTK grouping needs to be done
 <br />
 
-# target library example- derpygui, tkinter, fltk  etc
+# Statistics for- derpygui, tkinter, fltk 
 
 <br /> **dearpygui**  <br />
     Stats:
-        library folder size(in pyinstaller exe) : 3MB 
+        `library folder size(in pyinstaller exe) : 3MB 
         RAM : 52MB
-        ROM : 19MB -- no change after using complex GUI
+        ROM : 19MB -- no change after using complex GUI`
     Pros:
         It starts up fast, so no issues i suppose
     Cons:
         Can't Change font or it' size
 <br /> **tkinter** <br />
+    
     Stats:
-        library dir size : 4MB 
+        `library dir size : 4MB 
         RAM : 19MB
-        ROM : 22.3 MB -- no change after using complex GUI  
+        ROM : 22.3 MB -- no change after using complex GUI  `
+    
     Pros:
+    
         no install requirement !
         It can almost replicate the design of a Qt-GUI
     Cons:
         Can't change the size of Check box.
 <br />**ptfltk** <br />
     Stats:
-        library dir size: 4MB 
+        `library dir size: 4MB 
         RAM : 20MB for exe, 136Mb for IDE
-        ROM : 19MB 
+        ROM : 19MB `
     Pros:
         Offers more versatility, more stable, fast startup
     Cons:

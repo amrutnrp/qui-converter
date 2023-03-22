@@ -16,9 +16,9 @@
 <br /> **dearpygui**  <br />
 
     Stats:
-        `library folder size(in pyinstaller exe) : 3MB 
+        library folder size(in pyinstaller exe) : 3MB 
         RAM : 52MB
-        ROM : 19MB -- no change after using complex GUI`
+        ROM : 19MB -- no change after using complex GUI
     Pros:
         It starts up fast, so no issues i suppose
     Cons:
@@ -26,12 +26,11 @@
 <br /> **tkinter** <br />
     
     Stats:
-        `library dir size : 4MB 
+        library dir size : 4MB 
         RAM : 19MB
-        ROM : 22.3 MB -- no change after using complex GUI  `
+        ROM : 22.3 MB -- no change after using complex GUI 
     
     Pros:
-    
         no install requirement !
         It can almost replicate the design of a Qt-GUI
     Cons:

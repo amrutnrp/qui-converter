@@ -4,12 +4,11 @@
   * Dearpygui can't render unicode texts
   * Can't change fonts/ font size
 <br /> **TK** <br />
-		Object overlap and transparency 
-		Checkbutton alignment problem
+  * Object overlap and transparency
+  * Checkbutton alignment problem
 <br />**PyFLTK**
-		can't change font/ font size
-		pyFLTK grouping needs to be done
-
+  * can't change font/ font size
+  * pyFLTK grouping needs to be done
 <br />
 # target library example- derpygui, tkinter, fltk  etc
 

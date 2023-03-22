@@ -29,4 +29,4 @@ copy result.py to any folder and enjoy the time you saved- by not manually writi
 
 Any collaboration is more than welcome.
 
-for library specific development status, see TODO.md
+for library specific development status, see [TODO.md](https://github.com/amrutnrp/qui-converter/blob/main/TODO.md)

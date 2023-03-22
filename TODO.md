@@ -1,21 +1,19 @@
 
 # Issues  
-**Dearpygui** <br />
+<br />**Dearpygui** <br />
 		Dearpygui can't render unicode texts
 		Can't change fonts/ font size
-**TK** <br />
+<br /> **TK** <br />
 		Object overlap and transparency 
 		Checkbutton alignment problem
-**PyFLTK**
+<br />**PyFLTK**
 		can't change font/ font size
 		pyFLTK grouping needs to be done
 
+<br />
+# target library example- derpygui, tkinter, fltk  etc
 
-
-======================================
-#target library example- derpygui, tkinter, fltk  etc
-======================================
-**dearpygui**  
+**dearpygui**  <br />
     Stats:
         library folder size(in pyinstaller exe) : 3MB 
         RAM : 52MB

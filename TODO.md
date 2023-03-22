@@ -1,21 +1,20 @@
 
-#issues:
-**Dearpygui**
-		Dearpygui can't render unicode texts
-		Can't change fonts/ font size
-**TK**
-		Object overlap and transparency 
-		Checkbutton alignment problem
-**PyFLTK**
-		can't change font/ font size
-		pyFLTK grouping needs to be done
+# Issues  
+<br />**Dearpygui** <br />
+  * Dearpygui can't render unicode texts
+  * Can't change fonts/ font size
+<br /> **TK** <br />
+  * Object overlap and transparency issues
+  * Checkbutton alignment problem
+<br />**PyFLTK**
+  * can't change font/ font size
+  * pyFLTK grouping needs to be done
+<br />
 
+# Statistics for- derpygui, tkinter, fltk 
 
+<br /> **dearpygui**  <br />
 
-======================================
-#target library example- derpygui, tkinter, fltk  etc
-======================================
-**dearpygui**
     Stats:
         library folder size(in pyinstaller exe) : 3MB 
         RAM : 52MB
@@ -24,17 +23,22 @@
         It starts up fast, so no issues i suppose
     Cons:
         Can't Change font or it' size
-**tkinter**
+        
+<br /> **tkinter** <br />
+    
     Stats:
         library dir size : 4MB 
         RAM : 19MB
-        ROM : 22.3 MB -- no change after using complex GUI  
+        ROM : 22.3 MB -- no change after using complex GUI 
+    
     Pros:
         no install requirement !
         It can almost replicate the design of a Qt-GUI
     Cons:
         Can't change the size of Check box.
-**ptfltk**
+        
+<br />**ptfltk** <br />
+
     Stats:
         library dir size: 4MB 
         RAM : 20MB for exe, 136Mb for IDE

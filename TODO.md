@@ -14,6 +14,7 @@
 # Statistics for- derpygui, tkinter, fltk 
 
 <br /> **dearpygui**  <br />
+
     Stats:
         `library folder size(in pyinstaller exe) : 3MB 
         RAM : 52MB
@@ -35,7 +36,9 @@
         It can almost replicate the design of a Qt-GUI
     Cons:
         Can't change the size of Check box.
+        
 <br />**ptfltk** <br />
+
     Stats:
         `library dir size: 4MB 
         RAM : 20MB for exe, 136Mb for IDE

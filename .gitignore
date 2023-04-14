@@ -152,6 +152,5 @@ cython_debug/
 #.idea/
 
 
-/ui-examples*
 result.py
 *.ui

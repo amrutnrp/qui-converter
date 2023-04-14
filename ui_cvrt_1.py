@@ -11,7 +11,7 @@ import re, os
 
 folder = 'ui-examples\\'
 # file = 'Ver_2.ui'
-file = 'text_base.ui'
+file = 'fakePromira.ui'
 # file = 'new_1.ui'
 # file = 'PSI_v1.ui'
 # file= 'x.ui'

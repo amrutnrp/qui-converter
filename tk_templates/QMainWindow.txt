@@ -13,6 +13,8 @@ class MainApplication():
         ##=========create_widgets ======================
         self.widget_items = {}
         style_obj = ttk.Style()
+	self.checkbox_var = {}
+
 
 {middle}
     def show(self):

@@ -1,6 +1,9 @@
+self.checkbox_var[ "{name}" ] = tk.IntVar()
 self.widget_items ["{name}"] = ttk.Checkbutton(master = self.{parent}, 
                                                     text='{text}',
                                                     style='{name}.T{eq_name}',
+						    var = self.checkbox_var[ "{name}" ] ,
+
                                                     )
 ;self.widget_items ["{name}"].place(
                                 x = {x},

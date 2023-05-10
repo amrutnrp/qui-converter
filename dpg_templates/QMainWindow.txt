@@ -1,5 +1,8 @@
 import dearpygui.dearpygui as dpg
 import sys
+from ctypes import windll
+windll.shcore.SetProcessDpiAwareness(1)
+
 dpg.create_context()
 with dpg.window(tag="mainWindow", pos=(0, 0), no_resize = False) as win1:
 
@@ -27,6 +30,11 @@ with dpg.theme() as global_theme:
         dpg.add_theme_style(dpg.mvStyleVar_FrameRounding, 7, category=dpg.mvThemeCat_Core)
         dpg.add_theme_style(dpg.mvStyleVar_FrameBorderSize, 1, category=dpg.mvThemeCat_Core)
 dpg.bind_item_theme(win1, global_theme)
+
+with dpg.font_registry() as win1_font_registry:
+    regular_font = dpg.add_font('font/ComicNeue.otf', 16)
+
+dpg.bind_item_font(win1, regular_font)
 
 def clean_up():
     retention_list = ['retention_list', 'this', 'obj_dict','layout','','']

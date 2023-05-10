@@ -6,19 +6,66 @@ Created on Wed Mar 15 11:57:15 2023
 """
 
 import xml.etree.ElementTree as ET
-import re, os
+import re, os, sys
+
+args = sys.argv
+l= len (args)
+if l ==1:
+    folder = 'ui\\'
+    #====================================
+    #====================================
+    #====================================
+    list_of_files = os.listdir(folder)
+    print ('======================================\nFiles Present')
+    for idx, i in enumerate (list_of_files):
+        print (idx,'\t',i )
+    h= input ('Enter a number and Select the file:\t ')
+    if not h.isdigit():
+        input ('Wrong file selection input!!')
+        raise SystemExit()
+    else:
+        h= int (h)
+    if h>=len(list_of_files):
+        input ('Wrong file selection input!!')
+        raise SystemExit()
 
 
-folder = 'ui-examples\\'
-# file = 'Ver_2.ui'
-file = 'fakePromira.ui'
-# file = 'new_1.ui'
-# file = 'PSI_v1.ui'
-# file= 'x.ui'
+    file = folder + list_of_files [h]
 
-cvt_lib = 'tk'
-# cvt_lib = 'pyfltk'
-# cvt_lib = 'dpg'
+
+    h= input ('======================================\nLibrary Options -- \n1: Tkinter\n2: Dear PyGUI\n3: py-FLTK\nEnter option for target library:\t')
+    if not h.isdigit():
+        input ('Wrong  input!!')
+        raise SystemExit()
+    else:
+        h= int (h)
+    if h == 1:
+        cvt_lib = 'tk'
+    elif h == 3:
+        cvt_lib = 'pyfltk'
+    elif h == 2:
+        cvt_lib = 'dpg'
+    else:
+        input ('Wrong input!!')
+        raise SystemExit()
+
+    print ('processing...\n\n\n\n\n\n')
+
+    #====================================
+    #====================================
+    #====================================
+else:
+    args = sys.argv
+    l= len (args)
+    cvt_lib = args[1]
+    file = args[2]
+    # print (cvt_lib, file)
+    # print ('all ok')
+    #raise SystemExit()
+print ('all ok\n')    
+    
+    
+
 print_missing_kw_flag = False
 extra_compact_flag = False
 
@@ -46,6 +93,7 @@ widget_translation  = {
                 'QVBoxLayout'  :  '',
                 'QWidget'      :  '',
                 'QTextBrowser' :  '',
+                'QComboBox'    :  'Button',
 
             }
 
@@ -68,7 +116,7 @@ class indent_num_class ():
     def get(self):
         return self.x
 
-mytree = ET.parse(folder+file)
+mytree = ET.parse(file)
 root = mytree.getroot()
 if 'version' not in root.attrib:
     print ('invalid UI file')
@@ -362,7 +410,7 @@ if bool(tab_order):
 
 
 
-
+print ('Done\n') 
 
 
 

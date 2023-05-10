@@ -1,6 +1,10 @@
 import fltk as fL
 import sys
 
+
+from ctypes import windll
+windll.shcore.SetProcessDpiAwareness(1)
+
 class MainApplication():
     def __init__(self):
         self.Main_window = fL.Fl_Window(100,  # x of window origin

@@ -158,3 +158,6 @@ result.py
 #dearpygui font package
 /font/*
 workspace.py
+
+
+/``output/*

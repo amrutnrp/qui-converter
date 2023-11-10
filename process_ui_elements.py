@@ -21,21 +21,21 @@ cwd = os.getcwd()
 
 def formatError(x):
     input (str(x))
-    SystemExit
+    raise SystemExit
 
 def dump_data( file_str, filename = 'result',ext = '.py', cwd = '.'):
-    if 'output' not in os.listdir ( cwd ):
-        os.mkdir (cwd + '/output')
-    with open( cwd + '/output/'+filename+ext, "w", encoding="utf-8") as f:
+    if '``output' not in os.listdir ( cwd ):
+        os.mkdir (cwd + '/``output')
+    with open( cwd + '/``output/'+filename+ext, "w", encoding="utf-8") as f:
         f.write(file_str)
 
 class indent_num_class ():
-    def __init__(self, limit_indentation = False):
+    def __init__(self, libType = 1):
         self.x = 0
         self.mod_Flag = 0
-        self.limit_indentation = limit_indentation                               # in case of tk/pyFLTK, the indentation doesn't have to repeat for all widgets
+        self.limit_indentation = True if libType == 0 else False                  # in case of pyFLTK, the indentation doesn't have to repeat for all widgets
     def inc(self):                                                               # but in dearpygui, it does
-        if self.tk_fltk and self.x ==2 :
+        if self.limit_indentation and self.x ==2 :
             self.mod_Flag += 1
             return
         self.x += 1
@@ -187,13 +187,94 @@ def custom_ui_translate_tk (var):
         slate += add_later
         return slate
 
-
-    # no_of_indents = indent_num_class(True)                                          # initialize indent variable that'll be tracked throughout the writing of template_file
+                                         # initialize indent variable that'll be tracked throughout the writing of template_file
     file_string = write_gui_template_tk (   var,
                                             parent = '',
                                             extras= '' ,
                                             glob_var_zip = [ 1 ] )
     return file_string
+
+
+
+def custom_ui_translate_pyfltk_dpg (var, lib_flag):
+    if lib_flag == 0:
+        template_path = os.path.join (cwd ,'pyfltk_templates' )
+    elif lib_flag == 1:
+        template_path = os.path.join (cwd ,'dpg_templates' )
+    else:
+        formatError ('odd library selected, quitting')
+
+
+    dismiss_classes = ['QMenuBar', 'QStatusBar']
+
+    def write_gui_template_pyfltk_dpg (     list_item = [],
+                                            parent = '',
+                                            extras= '',
+                                            glob_var_zip = []       ):
+        if (len(list_item) == 0 or len(glob_var_zip) ==0):
+                formatError('WRong argument selection in TK function')
+
+        slate               = ''
+        add_later           = ''
+        extras_1            = ''
+        parent_next         = parent
+        widget_counter      = glob_var_zip [0]
+        indent_var          = glob_var_zip [1]
+
+        slate = ''
+        add_later = ''
+        parent_1 = parent
+        extras_1= ''
+        for item in list_item:
+            if type(item) == dict:  # build widget
+                if item['name'] == 'centralwidget' or item['class'] in dismiss_classes:
+                    continue
+                else:
+                    if 'pointsize' not in item: item ['pointsize'] = default_font_size
+                    if 'family' not in item: item ['family'] = default_font_family
+
+                    template_file= os.path.join (template_path , item['class'] + '.txt' )
+                    parent_1 = item['class'] + str(widget_counter)
+                    widget_counter += 1
+
+                    if os.path.exists (template_file  ):
+                        f2 = open  (template_file, 'r')
+                        str_1 = f2.readlines()
+                        f2.close()
+                        if 'import' in str_1[0]:                   #most likely Qmainwidget
+                            f2 = open  (template_file, 'r')
+                            str_2 = f2.read()
+                            f2.close()
+                            str_3 = str_2.split('{middle}')  #check if it's main
+                            if len(str_3) == 1:
+                                formatError ('Invalid Template for QMainWidget')
+                            add_later = format_template ( str_3 [-1], item , indent_var, True, parent, extras)
+                            slate +=  format_template(str_3[0] ,item , indent_var, True, parent, extras)+ '\n'
+                        else:
+                            str_4 =  format_template (str_1 , item, indent_var, False, parent, extras)
+                            slate +=  str_4  + '\n'
+                    else:
+                        print ('Template not present for : ', item['class'])
+
+            elif type (item) == list:  # loop through again
+                indent_var.inc()
+                glob_var_zip = [widget_counter, indent_var]
+                slate += write_gui_template_pyfltk_dpg (item, parent_next, extras_1, glob_var_zip)
+                widget_counter, indent_var= glob_var_zip [0],  glob_var_zip [1]
+                indent_var.dec()
+            else:
+                formatError("unexpected data format")
+
+        slate += add_later
+        return slate
+
+    indent_num = indent_num_class(lib_flag)
+    file_string = write_gui_template_pyfltk_dpg (   var,
+                                            parent = '',
+                                            extras= '' ,
+                                            glob_var_zip = [ 1 , indent_num] )
+    return file_string
+
 
 
 

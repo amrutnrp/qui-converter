@@ -1,7 +1,12 @@
 import dearpygui.dearpygui as dpg
-import sys
+import sys,os
 from ctypes import windll
 windll.shcore.SetProcessDpiAwareness(1)
+
+
+if not os.path.exists(os.path.join (os.getcwd(),'font' )):
+    print ('font folder doesn\'t exist.. Quitting program')
+    raise SystemExit()
 
 dpg.create_context()
 with dpg.window(tag="mainWindow", pos=(0, 0), no_resize = False) as win1:

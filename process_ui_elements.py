@@ -276,7 +276,8 @@ def custom_ui_translate_pyfltk_dpg (var, lib_flag):
     return file_string
 
 
-
+def custom_ui_translate_iupcpp(var):
+    pass
 
 if __name__ == "__main__":
     from get_elements import get_elements

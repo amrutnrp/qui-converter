@@ -94,7 +94,7 @@ class Processor():
             cvt_lib = 'dpg'
             
         cwd = os.getcwd()
-        proc = subprocess.Popen(["python", cwd+"/ui_cvrt_1.py", str(cvt_lib) , fname ], stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+        proc = subprocess.Popen(["python", cwd+"/new_master.py", str(cvt_lib) , fname ], stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
         s1= proc.communicate()[0]
         s2 = s1.decode()
         pr( str( s2))

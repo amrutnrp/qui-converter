@@ -8,7 +8,7 @@ Created on Thu Nov  9 14:48:45 2023
 import re, os, sys
 
 from get_elements import  get_elements
-
+from process_ui_elements import *
 
 args = sys.argv
 l= len (args)
@@ -69,5 +69,27 @@ print ('input all ok\n====================================\n')
 
 
 all_items, _a, _b = get_elements (file)
+
+
+
+
+if cvt_lib == 'tk':
+    file_string_towrite = custom_ui_translate_tk ( all_items )
+elif cvt_lib == 'dpg':
+    file_string_towrite = custom_ui_translate_pyfltk_dpg ( all_items , 1 )
+elif cvt_lib == 'pyfltk':
+    file_string_towrite = custom_ui_translate_pyfltk_dpg ( all_items , 0 )    
+elif cvt_lib == 'iupcpp':
+    file_string_towrite = custom_ui_translate_iupcpp ( all_items)
+else:
+    input ('How is it even possible!!')
+    raise SystemExit()
+
+
+dump_data (file_string_towrite, 'result', '.py', cwd)
+
+print ('Done\n')
+
+
 
 

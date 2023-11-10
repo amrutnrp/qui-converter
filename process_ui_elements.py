@@ -101,7 +101,7 @@ def format_template (list_of_strings, dictionary, indent_num , include_non_kw_li
 
 
 def custom_ui_translate_tk (var):
-    template_path = os.path.join (cwd ,'tk_templates' )
+    template_path = os.path.join (cwd ,'Templates', 'tk_templates' )
     widget_translation  = {
         'QPushButton'  : 'Button',
         'QLabel'       : 'Label',
@@ -198,9 +198,9 @@ def custom_ui_translate_tk (var):
 
 def custom_ui_translate_pyfltk_dpg (var, lib_flag):
     if lib_flag == 0:
-        template_path = os.path.join (cwd ,'pyfltk_templates' )
+        template_path = os.path.join (cwd ,'Templates', 'pyfltk_templates' )
     elif lib_flag == 1:
-        template_path = os.path.join (cwd ,'dpg_templates' )
+        template_path = os.path.join (cwd ,'Templates', 'dpg_templates' )
     else:
         formatError ('odd library selected, quitting')
 
@@ -276,8 +276,8 @@ def custom_ui_translate_pyfltk_dpg (var, lib_flag):
     return file_string
 
 
-def custom_ui_translate_iupcpp(var):
-    pass
+# def custom_ui_translate_iupcpp(var):
+    # pass
 
 if __name__ == "__main__":
     from get_elements import get_elements

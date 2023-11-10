@@ -1,0 +1,26 @@
+#include <stdlib.h>
+#include <iup.h>
+
+
+{pre_function}
+
+int main(int argc, char **argv)
+{
+
+
+{ihandle_section}
+
+  IupOpen(&argc, &argv);
+  
+
+
+{middle}
+
+
+  IupClose();
+  return EXIT_SUCCESS;
+}
+
+
+
+

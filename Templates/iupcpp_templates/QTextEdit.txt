@@ -1,0 +1,9 @@
+self.widget_items ["{name}"] = scrolledtext.ScrolledText ( master = self.{parent},
+                                            wrap = tk.WORD,, text = "{text}",
+                                             font=('{family}', {pointsize}),
+                                            )
+;self.widget_items ["{name}"] .place(x = {x},
+                                        y = {y},
+                                        width = {width},
+                                            height = {height},
+                                        )

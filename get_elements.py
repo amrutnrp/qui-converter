@@ -43,7 +43,7 @@ def Process_tree_data( list_item ):
         print ( '===',(list_item[2]) )
         formatError ('Non blank string LOL ')
 
-    if not bool( list_item[1]  ):                                                  # it may be rect, font, item, pointsize ...
+    if not bool( list_item[1]  ):                                                  # it may be rect, font, item,  ... not pointsize
         if list_item[0] == 'item':                                                 # it's just item, bypass the path, cuz it gives a list that can't be processed below
             if len(list_item) != 4:                                                # there must be 4 items , if not , print and ignore it
                 print ('Error: other widgets ignored under \'item\' ',list_item)
@@ -62,7 +62,7 @@ def Process_tree_data( list_item ):
             return Process_tree_data ( list_item[3] )
         elif property_name == 'font':                                              # parent of use case 12
             t2 = Process_tree_data (list_item[3])
-            return {'fontsize' : t2}
+            return t2
         elif property_name == 'windowTitle':                                       # use case 13
             t2 = Process_tree_data (list_item[3])
             return {'name' : t2 ['string']}
@@ -158,7 +158,7 @@ def get_elements(file):
     # Process the raw data into list and dictinaries  ---- good for visualization
     #=============================================================================================================
 
-    all_val_2 = Process_tree_data( all_val)
+    all_val_2 = Process_tree_data( all_val)                                         # removes redundant data and returns compact data in list form
 
 
     return all_val_2, tab_order, all_val

@@ -2,7 +2,6 @@
 # Issues  
 <br />**Dearpygui** <br />
   * Dearpygui can't render unicode texts
-  * Can't change fonts/ font size
 <br /> **TK** <br />
   * Object overlap and transparency issues
   * Checkbutton alignment problem

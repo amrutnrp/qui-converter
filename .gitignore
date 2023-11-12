@@ -157,7 +157,7 @@ result.py
 
 #dearpygui font package
 /font/*
-workspace.py
+workspace1.py
 
 
 /``output/*

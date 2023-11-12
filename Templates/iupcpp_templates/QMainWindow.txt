@@ -17,6 +17,7 @@ int main(int argc, char **argv)
 {middle}
 
 
+  IupMainLoop();
   IupClose();
   return EXIT_SUCCESS;
 }

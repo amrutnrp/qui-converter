@@ -1,12 +1,5 @@
-self.widget_items ["{name}"] = ttk.Button( master = self.{parent}, 
-                                text='{text}',
-                                style='{name}.T{eq_name}',
-                                )
-;self.widget_items ["{name}"].place(x = {x},
-                                y = {y},
-                                height={height}, 
-                                width={width}, )
-;style_obj.configure('{name}.T{eq_name}', font=('{family}', {pointsize}) , )
+button_{name} = IupButton("{text}", NULL);
 
-;self.widget_items ["{name}"].{extras};                         
-                                
+
+
+//IupSetCallback(button_{name}, "ACTION", (Icallback) <function_name>);  /* Registers callbacks */

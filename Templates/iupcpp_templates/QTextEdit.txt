@@ -1,9 +1,6 @@
-self.widget_items ["{name}"] = scrolledtext.ScrolledText ( master = self.{parent},
-                                            wrap = tk.WORD,, text = "{text}",
-                                             font=('{family}', {pointsize}),
-                                            )
-;self.widget_items ["{name}"] .place(x = {x},
-                                        y = {y},
-                                        width = {width},
-                                            height = {height},
-                                        )
+
+
+multitext_{name} = IupText(NULL);
+IupSetAttribute(multitext_{name}, "MULTILINE", "YES");
+
+IupSetStrAttribute(multitext_{name}, "VALUE", "{text}");

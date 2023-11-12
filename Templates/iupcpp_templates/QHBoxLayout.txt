@@ -1,7 +1,7 @@
-self.{name} = ttk.Frame (self.{parent} );
-self.{name}.place(x = {x},
-                                y = {y},
-                                height={height}, 
-                                width={width}, );
-                              
-self.{name}.{extras}
+vbox_{name} = IupVbox(
+    label,
+    button,
+    NULL);
+  IupSetAttribute(vbox_{name}, "ALIGNMENT", "ACENTER");
+  IupSetAttribute(vbox_{name}, "GAP", "10");
+  IupSetAttribute(vbox_{name}, "MARGIN", "10x10");

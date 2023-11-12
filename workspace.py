@@ -25,21 +25,21 @@ def custom_uip (var):
 
     def write_gui_template_iup (            list_item = [],
                                             parent = '',
-                                            extras= '',
-                                            glob_var_zip = []       ):
-        if (len(list_item) == 0 or len(glob_var_zip) ==0):
+                                            glob_var_zip = [],
+                                            yield_children = []
+                                            ):
+        if (len(list_item) == 0 or len(glob_var_zip) ==0 or len(yield_children) == 0):
                 formatError('WRong argument selection in TK function')
 
         slate               = ''
         add_later           = ''
-        extras_1            = ''
         parent_next         = parent
         widget_counter      = glob_var_zip [0]
 
-        slate = ''
-        add_later = ''
-        parent_1 = parent
-        extras_1= ''
+    
+
+
+
         for item in list_item:
             if type(item) == dict:  # build widget
                 if item['name'] == 'centralwidget' or item['class'] in dismiss_classes:
@@ -49,21 +49,39 @@ def custom_uip (var):
                     if 'family' not in item: item ['family'] = default_font_family
 
                     template_file= os.path.join (template_path , item['class'] + '.txt' )
-                    parent_1 = item['class'] + str(widget_counter)
+                    #parent_next = item['class'] + str(widget_counter)
+                    widget_counter += 1
+
+
+
+
+
+
+
+
+
+
+
+
+        for item in list_item:
+            if type(item) == dict:  # build widget
+                if item['name'] == 'centralwidget' or item['class'] in dismiss_classes:
+                    continue
+                else:
+                    if 'pointsize' not in item: item ['pointsize'] = default_font_size
+                    if 'family' not in item: item ['family'] = default_font_family
+
+                    template_file= os.path.join (template_path , item['class'] + '.txt' )
+                    parent_next = item['class'] + str(widget_counter)
                     widget_counter += 1
 
                     if os.path.exists (template_file  ):
-                        f2 = open  (template_file, 'r')
-                        str_1 = f2.readlines()
-                        f2.close()
-                        if 'import' in str_1[0]:                   #most likely Qmainwidget
+                        f2 = open  (template_file, 'r')  ; str_1 = f2.readlines()  ; f2.close()
+                        if '#' in str_1[0]:                   #most likely Qmainwidget
                             f2 = open  (template_file, 'r')
                             str_2 = f2.read()
                             f2.close()
                             str_3 = str_2.split('{middle}')  #check if it's main
-                            if len(str_3) == 1:
-                                formatError ('Invalid Template for QMainWidget')
-                            add_later = format_template ( str_3 [-1], item ,  0, True, parent, extras)
                             slate +=  format_template(str_3[0] ,item ,  0, True, parent, extras)+ '\n'
                         else:
                             str_4 =  format_template (str_1 , item,  0, False, parent, extras)
@@ -73,13 +91,18 @@ def custom_uip (var):
 
             elif type (item) == list:  # loop through again
                 glob_var_zip = [widget_counter]
-                slate += write_gui_template_iup (item, parent_next, extras_1, glob_var_zip)
+                slate += write_gui_template_iup (item, parent_next, glob_var_zip)
                 widget_counter= glob_var_zip [0]
             else:
                 formatError("unexpected data format")
 
         slate += add_later
         return slate
+
+
+
+
+
 
     file_string = write_gui_template_iup (   var,
                                             parent = '',

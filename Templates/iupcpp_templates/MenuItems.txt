@@ -1,0 +1,17 @@
+item_{leafname} = IupItem("{text}...", NULL);
+
+IupSetCallback(item_{leafname} , "ACTION", (Icallback) item_{function_name} );
+
+{branchname}_menu = IupMenu(
+    item_{leafname} ,
+    item_{leafname2} ,
+    item_{leafname3} ,
+    NULL);
+
+
+sub_menu_{branchname} = IupSubmenu("{BranchText}", {branchname}_menu);
+
+menu = IupMenu(
+    sub_menu_{branchname},
+    sub_menu_{branchname2}
+    NULL);

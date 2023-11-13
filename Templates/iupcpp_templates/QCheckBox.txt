@@ -1,2 +1,2 @@
 
-Ihandle* IupToggle(const char "{name}", const char {function_name});
+//Ihandle* IupToggle(const char "{name}", const char {function_name});

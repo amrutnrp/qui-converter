@@ -1,1 +1,2 @@
 Ihandle* IupRadio(Ihandle *{name});
+IupSetAttribute({name} , "FONT", "{font_str}");

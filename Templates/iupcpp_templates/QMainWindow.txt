@@ -1,25 +1,30 @@
 #include <stdlib.h>
 #include <iup.h>
-
-
-{pre_function}
-
+//function declation section
+{--}
 int main(int argc, char **argv)
 {
-
-
-{ihandle_section}
-
-  IupOpen(&argc, &argv);
-  
-
-
-{middle}
-
-
-  IupMainLoop();
-  IupClose();
-  return EXIT_SUCCESS;
+	//ihandle declaration section
+	Ihandle *dlg_main, *vbox_main;
+{--}
+	IupOpen(&argc, &argv);
+	//widget works here
+{--}
+	vbox_main = IupVbox(
+						{--}
+						NULL);
+	IupSetAttribute(vbox_main, "ALIGNMENT", "ACENTER");
+	IupSetAttribute(vbox_main, "GAP", "5");            
+	IupSetAttribute(vbox_main, "MARGIN", "5x5");       
+	dlg_main = IupDialog(vbox_main);
+	IupSetAttribute(dlg_main, "TITLE", "{name}");
+	IupSetAttribute(dlg_main, "RASTERSIZE", "{width}x{height}");
+	IupShowXY(dlg_main, IUP_CENTER, IUP_CENTER);
+    //define button/other callbacks here
+	{--}
+	IupMainLoop();
+	IupClose();
+	return EXIT_SUCCESS;
 }
 
 

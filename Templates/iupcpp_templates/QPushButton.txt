@@ -1,5 +1,3 @@
-button_{name} = IupButton("{text}", NULL);
-
-
-
-//IupSetCallback(button_{name}, "ACTION", (Icallback) <function_name>);  /* Registers callbacks */
+{name} = IupButton("{text}", NULL); 
+//IupSetCallback({name}, "ACTION", (Icallback) <function_name>);  
+IupSetAttribute({name} , "FONT", "{font_str}");

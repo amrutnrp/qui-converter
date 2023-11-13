@@ -95,7 +95,6 @@ def format_template (list_of_strings, dictionary, indent_num , include_non_kw_li
     return master_string
 
 
-    pass
 
 
 

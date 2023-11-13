@@ -1,6 +1,4 @@
-
-
-multitext_{name} = IupText(NULL);
-IupSetAttribute(multitext_{name}, "MULTILINE", "YES");
-
-IupSetStrAttribute(multitext_{name}, "VALUE", "{text}");
+{name} = IupText(NULL);
+IupSetAttribute({name}, "MULTILINE", "YES");
+IupSetStrAttribute({name}, "VALUE", "{text}");
+IupSetAttribute({name} , "FONT", "{font_str}");

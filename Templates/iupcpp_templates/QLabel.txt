@@ -1,1 +1,2 @@
-label_{name} =  IupLabel("{text}");
+{name} =  IupLabel("{text}");
+IupSetAttribute({name} , "FONT", "{font_str}");

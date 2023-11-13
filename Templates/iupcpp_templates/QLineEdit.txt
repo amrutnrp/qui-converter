@@ -1,5 +1,3 @@
-
-
-textInput_{name} = IupText(NULL);
-
-IupSetStrAttribute(textInput_{name} , "VALUE", "{text}");
+{name} = IupText(NULL); //textInput
+IupSetStrAttribute({name} , "VALUE", "{text}");
+IupSetAttribute({name} , "FONT", "{font_str}");

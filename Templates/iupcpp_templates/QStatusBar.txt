@@ -1,0 +1,6 @@
+//Ihandle *{name};
+//-
+{name} = IupLabel("");  //it's a label
+IupSetAttribute({name}, "NAME", "STATUSBAR");  
+IupSetAttribute({name}, "EXPAND", "HORIZONTAL");
+IupSetAttribute({name}, "PADDING", "10x5");

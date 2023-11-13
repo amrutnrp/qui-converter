@@ -1,4 +1,1 @@
- 
- {name} = IupVbox(
-						
-  						NULL);
+ {name} = IupVbox({children},NULL);

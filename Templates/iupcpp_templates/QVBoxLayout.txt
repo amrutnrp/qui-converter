@@ -1,8 +1,3 @@
-self.{name} = ttk.Frame (self.{parent} );
-self.{name}.place(x = {x},
-                                y = {y},
-                                height={height}, 
-                                width={width}, );
-                              
-
-self.{name}.{extras}
+{name} = IupVbox({children},NULL);
+IupSetAttribute({name}, "GAP", "2");
+IupSetAttribute({name}, "MARGIN", "2x2");

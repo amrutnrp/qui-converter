@@ -11,7 +11,7 @@ import re, os, sys
 from get_elements import  get_elements
 from process_ui_elements import *
 
-var, _a, b= get_elements('ui/a1.ui')
+var, _a, b= get_elements('ui/a.ui')
 
 
 def custom_ui_translate_iupcpp(var):
@@ -47,6 +47,7 @@ def format_template_iupcpp (list_of_strings, dictionary, returnLine_w_noKeyword 
 
 template_path = os.path.join (cwd ,'Templates', 'iupcpp_templates' )
 dismiss_classes = ['QMenuBar', 'QStatusBar']
+default_font_str = 'MS Shell Dlg 2 , 8'
 
 def write_gui_template_iup ( list_item = [],  yield_children = []  ):
     if (len(list_item) == 0 or len(yield_children) == 0):
@@ -67,49 +68,54 @@ def write_gui_template_iup ( list_item = [],  yield_children = []  ):
             # print (list_of_all_children)
 
         elif type(item) == dict:  # build widget
-            if 'pointsize' not in item: item ['pointsize'] = default_font_size
-            if 'family' not in item: item ['family'] = default_font_family
+            if 'pointsize' not in item or 'family' not in item:                # set a default font
+                item ['font_str'] = default_font_str
+            else:
+                item ['font_str'] = item ['family']+','+ item['pointsize']
 
             template_file= os.path.join (template_path , item['class'] + '.txt' )
             if os.path.exists (template_file  ):
                 f2 = open  (template_file, 'r')  ; str_1 = f2.readlines()  ; f2.close()
+                current_widget_name  = item ['name']
+                yield_children[0] = yield_children[0]  + list_of_all_children
+                item['children'] = ','.join(list_of_all_children)
+
                 str_4 =  format_template_iupcpp (str_1 , item )
                 slate +=  str_4
-                
-                current_widget_name  = item ['name']  
-                yield_children[0] = yield_children[0]  + list_of_all_children
-                
+
+
+
+
             else:
                 print ('Template not present for : ', item['class'])
         else:
             formatError("unexpected data format")
 
-    return [ slate, current_widget_name ,list_of_all_children ] 
+    return [ slate, current_widget_name ,list_of_all_children ]
 
 
 
 children_list = []
 children_data= ['']
 immediate_children = []
-yield_children = [ children_list , children_data, immediate_children] 
+yield_children = [ children_list , children_data, immediate_children]
 
 main_template = os.path.join (template_path , 'QMainWindow.txt' )
 f2 = open  (main_template, 'r')  ; str_1 = f2.readlines()  ; f2.close(); str_1 = ''.join (str_1)
 str_blocks = str_1.split('{--}')
-file_string = str_blocks [0] +  str_blocks [1]                             # include and main block 
+file_string = str_blocks [0] +  str_blocks [1]                             # include and main block
 
 ret = write_gui_template_iup (   var [1:], yield_children )
 slate2, _a , main_children = ret[0], ret[1], ret[2]
 
 
-children_list , children_data = yield_children[0], yield_children[1]
-# children_list= ['a','b','c']
+children_list  = yield_children[0]
 
-file_string += '\nIhandle'                                                # the Ihandle declaration block 
+file_string += '\nIhandle'                                                # the Ihandle declaration block
 for i in children_list + main_children:
     file_string += '  *'+i+','
 else:
-    file_string  = file_string [:-1] + ';' 
+    file_string  = file_string [:-1] + ';'
 
 
 file_string +=  str_blocks [2]
@@ -118,7 +124,6 @@ file_string +=  str_blocks [3]
 for i in ret[2]:
     file_string+= i+','
 
-# var[0]['width']  = str( int ( int (var[0]['width']  ) / 1.5) )
 var[0]['height'] = str( int ( int (var[0]['height'] )+ 40) )              # add something exxtra for top bar
 ret2= format_template_iupcpp (str_blocks[4], var[0] , returnLine_w_noKeyword= 'True')
 

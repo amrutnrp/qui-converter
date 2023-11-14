@@ -1,0 +1,5 @@
+{name} = iup.text{	multiline = "NO",
+			expand = "YES",
+			font = "{font_str}",
+			value = "{text}",
+			}

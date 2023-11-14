@@ -1,0 +1,5 @@
+{name}= iup.label{	name = "STATUSBAR",
+		  	font =  "{font_str}",
+			expand = "HORIZONTAL",
+			padding = "10x5",
+			}

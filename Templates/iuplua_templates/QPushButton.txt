@@ -1,0 +1,3 @@
+{name}= iup.button{	title = "{text}",
+			font = "{font_str}"
+			}

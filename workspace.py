@@ -78,12 +78,14 @@ def write_gui_template_iup ( list_item = [],  yield_children = []  ):
                 f2 = open  (template_file, 'r')  ; str_1 = f2.readlines()  ; f2.close()
                 current_widget_name  = item ['name']
                 yield_children[0] = yield_children[0]  + list_of_all_children
-                item['children'] = ','.join(list_of_all_children)
+                item['children'] = ','.join([ i for i in list_of_all_children if i in yield_children [3]])
+                # if the children hasn't been defined, then don't include it
 
                 str_4 =  format_template_iupcpp (str_1 , item )
                 slate +=  str_4
 
-
+                if len((''.join(str_1)).strip()) != 0:                         # if the definition is proper, add it to defined list
+                    yield_children [3][current_widget_name] = True
 
 
             else:
@@ -98,7 +100,8 @@ def write_gui_template_iup ( list_item = [],  yield_children = []  ):
 children_list = []
 children_data= ['']
 immediate_children = []
-yield_children = [ children_list , children_data, immediate_children]
+widget_declaration_status = {}
+yield_children = [ children_list , children_data, immediate_children, widget_declaration_status]
 
 main_template = os.path.join (template_path , 'QMainWindow.txt' )
 f2 = open  (main_template, 'r')  ; str_1 = f2.readlines()  ; f2.close(); str_1 = ''.join (str_1)
@@ -121,8 +124,9 @@ else:
 file_string +=  str_blocks [2]
 file_string+= slate2                                                      # widget description block
 file_string +=  str_blocks [3]
-for i in ret[2]:
-    file_string+= i+','
+for i in ret[2]:                                                          #children of main / top level
+    if i in widget_declaration_status:
+        file_string+= i+','
 
 var[0]['height'] = str( int ( int (var[0]['height'] )+ 40) )              # add something exxtra for top bar
 ret2= format_template_iupcpp (str_blocks[4], var[0] , returnLine_w_noKeyword= 'True')

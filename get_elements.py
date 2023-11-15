@@ -95,7 +95,7 @@ def Process_tree_data( list_item ):
             if type (t3) == list:
                 t2.append (t3 )                                                    # Final item  =[ dict, list --list-- list ]
     if list_item[0] == 'widget' :
-        if t2 [0]['class'] == 'QWidget' and 'layoutWidget' in t2[0]['name']:        # layoutWidget widget is just a container, then simplify it
+        if t2 [0]['class'] == 'QWidget' and 'LayoutWidget' in t2[0]['name']:        # layoutWidget widget is just a container, then simplify it
             if len (t2) == 2:                                                       # first item is always property=geometry, 1nd item is always a QHBOxLayout or something
                 t2[0].update(  t2[1][0])                                            # so add the property into top dictinary and keep other widgets in the list
                 t2 = [ t2[0] ] + t2[1] [1:]                                         # property is already merged in above section, so it's just 2 items
@@ -164,7 +164,7 @@ def get_elements(file):
     return all_val_2, tab_order, all_val
 
 if __name__ == "__main__":
-    get_elements('ui/app.ui')
+    s= get_elements('ui/a.ui')
 
 
 

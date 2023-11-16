@@ -1,0 +1,5 @@
+{name} = iup.vbox{
+	{children},
+	gap = "2",
+	margin = "2x2"
+}

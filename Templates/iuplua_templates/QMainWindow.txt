@@ -3,14 +3,18 @@ require("iuplua")
 {--}
 
 
-vbox = iup.vbox{
-{--}
+vbox_main = iup.vbox{
+	{--}
+	gap = "2",
+	margin = "2x2",
+	alignment = "ACENTER"
 }
-dlg = iup.dialog{
-  vbox,
-  title = "{name}"
+dlg_main = iup.dialog{
+  vbox_main,
+  title = "{name}",
+  rastersize = "{width}x{height}",
 }
-dlg:showxy(iup.CENTER,iup.CENTER)
+dlg_main:showxy(iup.CENTER,iup.CENTER)
 
 -- to be able to run this script inside another context
 if (iup.MainLoopLevel()==0) then

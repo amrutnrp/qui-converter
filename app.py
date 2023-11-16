@@ -30,7 +30,7 @@ class MainApplication():
         self.widget_items ["label_2"] = ttk.Label(master = self.QMainWindow1,text = "Select Library ",style='label_2.TLabel',)
         self.widget_items ["label_2"] .place(x = 20,y = 50,height=41,width=150,)
         style_obj.configure('label_2.TLabel', font=('MS Shell Dlg 2', 14) , )
-        options_comboBox = ["Tkinter","Dear PYGUI","PyFLTK"]
+        options_comboBox = ["Tkinter","Dear PYGUI","PyFLTK","IUP C", "iup lua"]
         self.clicked_comboBox = tk.StringVar()
         self.clicked_comboBox.set( options_comboBox [1] )
         self.widget_items ["comboBox"] = tk.OptionMenu( self.QMainWindow1 , self.clicked_comboBox , *options_comboBox)
@@ -92,6 +92,10 @@ class Processor():
             cvt_lib = 'pyfltk'
         elif gui_lib == "Dear PYGUI":
             cvt_lib = 'dpg'
+        elif gui_lib == "IUP C":
+            cvt_lib = 'iupcpp'
+        elif gui_lib == "iup lua":
+            cvt_lib = 'iuplua'
             
         cwd = os.getcwd()
         proc = subprocess.Popen(["python", cwd+"/new_master.py", str(cvt_lib) , fname ], stdout=subprocess.PIPE, stderr=subprocess.STDOUT)

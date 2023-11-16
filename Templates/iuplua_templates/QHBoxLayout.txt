@@ -1,0 +1,5 @@
+{name} = iup.hbox{
+	{children},
+	gap = "2",
+	margin = "2x2"
+}

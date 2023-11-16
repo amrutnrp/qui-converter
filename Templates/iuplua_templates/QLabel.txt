@@ -1,3 +1,4 @@
-{name}= iup.label{	title = "{text}",
+{name}= iup.label{	
+			title = "{text}",
 		  	font =  "{font_str}",
 			}

@@ -1,9 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Wed Mar 15 11:57:15 2023
-
-@author: amrutnp
-"""
 
 import xml.etree.ElementTree as ET
 import re, os, sys

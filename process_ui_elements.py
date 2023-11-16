@@ -1,9 +1,4 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Thu Nov  9 17:47:08 2023
 
-@author: amrutnp
-"""
 import os, re
 #  ============  user defined variables   ========================
 extra_compact_flag = False

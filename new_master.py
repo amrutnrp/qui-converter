@@ -1,10 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Thu Nov  9 14:48:45 2023
-
-@author: amrutnp
-"""
-
 import re, os, sys
 
 from get_elements import  get_elements

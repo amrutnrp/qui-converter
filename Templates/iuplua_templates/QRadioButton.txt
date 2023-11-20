@@ -1,0 +1,12 @@
+{name} = iup.flattoggle{   title = "{text}", 
+                            alignment = "ACENTER",
+                            value = "ON",
+                            --bgcolor = "255 0 0",
+                            font = "{font_str}", 
+                            -- pscolor = "0 0 255",  -- not working
+                            border  = "NO",
+                            --texthlcolor = "0 255 255",
+                            --checksize = 50,
+                            --textwrap = "NO",
+                            radio = "YES"
+                            }

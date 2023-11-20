@@ -1,0 +1,10 @@
+{name} = iup.list {
+
+	"put","your","lists","here",
+	value = 1,   -- the index of above list
+	expand="YES",
+	title = "{text}",
+	font = "{font_str}",
+	dropdown = "YES",
+	
+}

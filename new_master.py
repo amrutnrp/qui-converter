@@ -24,6 +24,7 @@ if l ==1:
         raise SystemExit()
     file = folder + list_of_files [h]                       # get the file path
 
+    print ("selected file : {}".format(list_of_files [h]))
     #====================================
     h= input ('''
 Library Options -- ========================>

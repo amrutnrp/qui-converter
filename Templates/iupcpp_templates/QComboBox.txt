@@ -1,16 +1,5 @@
-        options_{name} = [
-            "Tkinter",
-            "Dear PYGUI",
-            "PyFLTK"
-                ];
-        self.clicked_{name} = tk.StringVar();
-        self.clicked_{name}.set( options_{name} [1] );
 
-        self.widget_items ["{name}"] = tk.OptionMenu( self.{parent} , self.clicked_{name} , *options_{name});
-        ;self.widget_items ["{name}"].place(x = {x},
-                                y = {y},
-                                height={height}, 
-                                width={width}, );
-        self.widget_items ["{name}"].config(font = ('{family}', {pointsize}) ,);
-        menu = self.{parent}.nametowidget(self.widget_items ["{name}"].menuname) ;
-        menu.config(font=('{family}', {pointsize}) ) ;
+{name} =  IupList("{text}");
+IupSetAttribute({name} , "VALUE", "0");
+//IupSetAttribute({name} , "TITLE", "{text}");
+IupSetAttribute({name} , "DROPDOWN", "YES");

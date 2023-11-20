@@ -1,2 +1,11 @@
+{name} =  IupFlattoggle("{text}");
 
-//Ihandle* IupToggle(const char "{name}", const char {function_name});
+IupSetAttribute({name} , "FONT", "{font_str}");
+//IupSetAttribute({name} , "TITLE", "{text}");
+IupSetAttribute({name} , "ALIGNMENT", "ACENTER");
+//IupSetAttribute({name} , "BORDER", "YES");
+//IupSetAttribute({name} , "CHECKSIZE", 50 );
+IupSetAttribute({name} , "FONT", "{font_str}");
+IupSetAttribute({name} , "FONT", "{font_str}");
+
+
